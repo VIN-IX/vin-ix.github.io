@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cashier Calculator Website</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Cashier Dashboard</h1>
+            <p>
+                Add products, set prices, process purchases, and generate a receipt in one place.
+            </p>
+        </header>
+
+        <main class="layout">
+            <section class="panel">
+                <h2>Admin</h2>
+                <p class="panel-subtitle">Set up products here. These stay available even when a new transaction starts.
+                </p>
+
+                <div class="card">
+                    <span class="pill">Product Setup</span>
+                    <h3>Add a new product</h3>
+
+                    <div class="field">
+                        <label for="newProductName">Product name</label>
+                        <input type="text" id="newProductName" placeholder="Example: Sparkling Water" />
+                    </div>
+
+                    <button id="addProductButton" class="btn-primary">Add Product</button>
+                    <div id="adminAddStatus" class="status"></div>
+                </div>
+
+                <div class="card">
+                    <span class="pill">Price Manager</span>
+                    <h3>Set price per unit</h3>
+
+                    <div class="field">
+                        <label for="priceProductSelect">Choose a product</label>
+                        <select id="priceProductSelect"></select>
+                    </div>
+
+                    <div class="field">
+                        <label for="priceInput">Price per unit</label>
+                        <input type="number" id="priceInput" min="0" step="0.01" placeholder="Example: 3.99" />
+                    </div>
+
+                    <button id="setPriceButton" class="btn-warning">Apply Price</button>
+                    <div id="adminPriceStatus" class="status"></div>
+                </div>
+
+                <div class="card">
+                    <span class="pill">Live Catalog</span>
+                    <h3>Current products</h3>
+                    <div id="productList" class="mini-list"></div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Checkout</h2>
+                <p class="panel-subtitle">Start a new transaction, choose a product, set units with the keypad, and
+                    build the cart.</p>
+
+                <div class="card">
+                    <span class="pill">Transaction Controls</span>
+                    <h3>Start fresh</h3>
+                    <div class="button-row two">
+                        <button id="newTransactionButton" class="btn-secondary">New Transaction</button>
+                        <button id="payButton" class="btn-primary">Pay</button>
+                    </div>
+                    <div id="checkoutStatus" class="status"></div>
+                </div>
+
+                <div class="card">
+                    <span class="pill">Product Selection</span>
+                    <h3>Select product</h3>
+
+                    <div class="field">
+                        <label for="checkoutProductSelect">Product list</label>
+                        <select id="checkoutProductSelect"></select>
+                    </div>
+
+                    <div id="selectedProductInfo" class="selected-product-box muted"></div>
+                </div>
+
+                <div class="card">
+                    <span class="pill">Unit Keypad</span>
+                    <h3>Choose number of units</h3>
+
+                    <div class="field">
+                        <label for="unitInput">Unit</label>
+                        <input type="text" id="unitInput" value="" readonly placeholder="Click a number from 1 to 9" />
+                    </div>
+
+                    <div class="keypad">
+                        <button class="unit-button" data-unit="1">1</button>
+                        <button class="unit-button" data-unit="2">2</button>
+                        <button class="unit-button" data-unit="3">3</button>
+                        <button class="unit-button" data-unit="4">4</button>
+                        <button class="unit-button" data-unit="5">5</button>
+                        <button class="unit-button" data-unit="6">6</button>
+                        <button class="unit-button" data-unit="7">7</button>
+                        <button class="unit-button" data-unit="8">8</button>
+                        <button class="unit-button" data-unit="9">9</button>
+                    </div>
+
+                    <div class="button-row two" style="margin-top: 10px;">
+                        <button id="clearUnitButton" class="btn-secondary">Clear Unit</button>
+                        <button id="addToCartButton" class="btn-warning">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="pill">Shopping Cart</span>
+                    <h3>Current cart</h3>
+                    <div id="cartList" class="mini-list"></div>
+
+                    <div class="summary">
+                        <div class="summary-line">
+                            <span>Subtotal</span>
+                            <span id="checkoutSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Tax (5%)</span>
+                            <span id="checkoutTax">$0.00</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Total</span>
+                            <span id="checkoutTotal">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h2>Receipt</h2>
+                <p class="panel-subtitle">The receipt appears only after payment. Starting a new transaction removes the
+                    old one.</p>
+
+                <div class="receipt-shell">
+                    <div id="receiptArea" class="receipt-paper">
+                        <div class="empty-receipt">
+                            <div class="empty-receipt-message">
+                                No receipt yet.<br /><br />
+                                Ring up some items, click <strong>Pay</strong>, and the receipt will show here.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="references">
+            <details>
+                <summary>References</summary>
+                <p>MDN Web Docs. Document: getElementById() method. Mozilla.
+                    https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById</p>
+                <p>MDN Web Docs. EventTarget: addEventListener() method. Mozilla.
+                    https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener</p>
+                <p>MDN Web Docs. Document: createElement() method. Mozilla.
+                    https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement</p>
+                <p>WHATWG. HTML Living Standard. https://html.spec.whatwg.org/multipage/</p>
+                <p>MDN Web Docs. Element: innerHTML property. Mozilla.
+                    https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML</p>
+                <p>TC39. ECMAScript® Language Specification: Number.prototype.toFixed().
+                    https://tc39.es/ecma262/multipage/numbers-and-dates.html#sec-number.prototype.tofixed</p>
+            </details>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

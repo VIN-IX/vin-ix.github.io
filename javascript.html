@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript | NONSO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Shared site header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand">NONSO</a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="javascript.html" class="active">JavaScript</a></li>
+                    <li><a href="basketball.html">Basketball</a></li>
+                </ul>
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle" type="button">Light Mode</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page intro -->
+        <section class="section">
+            <div class="container">
+                <div class="content-block page-intro">
+                    <p class="eyebrow">JavaScript Notes</p>
+                    <h1 class="section-title">A simple and interactive reference</h1>
+                    <p class="section-text">
+                        This page collects core JavaScript concepts in a format that is easy to
+                        browse, search, and understand. Each card uses simple beginner-friendly
+                        explanations and small code examples.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search and filter controls -->
+        <section class="section">
+            <div class="container">
+                <div class="content-block js-controls">
+                    <div class="js-search-wrap">
+                        <label for="jsSearchInput" class="control-label">Search concepts</label>
+                        <input type="text" id="jsSearchInput" class="js-search-input"
+                            placeholder="Try: array, function, click, loop...">
+                    </div>
+
+                    <div>
+                        <p class="control-label">Filter by category</p>
+                        <div class="filter-row">
+                            <button class="filter-btn active" type="button" data-filter="all">All</button>
+                            <button class="filter-btn" type="button" data-filter="basics">Basics</button>
+                            <button class="filter-btn" type="button" data-filter="logic">Logic</button>
+                            <button class="filter-btn" type="button" data-filter="loops">Loops</button>
+                            <button class="filter-btn" type="button" data-filter="functions">Functions</button>
+                            <button class="filter-btn" type="button" data-filter="dom">DOM</button>
+                            <button class="filter-btn" type="button" data-filter="events">Events</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Concept cards -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2 js-card-grid" id="jsCardContainer">
+                    <article class="card js-card" data-category="basics" data-search="variables basics store value">
+                        <h3>Variables</h3>
+                        <p>A variable stores a value that can be used later.</p>
+                        <pre><code id="code-variables">let name = "Nonso";
+console.log(name);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-variables">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This creates a variable called <strong>name</strong>, stores the text
+                                <strong>"Nonso"</strong> inside it, and then prints that value to the console.
+                            </p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Nonso</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="basics" data-search="strings text basics">
+                        <h3>Strings</h3>
+                        <p>A string is text wrapped in quotes.</p>
+                        <pre><code id="code-strings">let message = "Hello World";
+console.log(message);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-strings">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This stores text inside a variable called <strong>message</strong>
+                                and prints that text to the console.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Hello World</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="basics" data-search="numbers math basics">
+                        <h3>Numbers</h3>
+                        <p>Numbers are used for values you want to calculate with.</p>
+                        <pre><code id="code-numbers">let score = 25;
+console.log(score + 5);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-numbers">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This creates a number variable called <strong>score</strong>, adds
+                                <strong>5</strong> to it, and prints the new value.
+                            </p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>30</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="basics" data-search="booleans true false basics">
+                        <h3>Booleans</h3>
+                        <p>A boolean only has two possible values: true or false.</p>
+                        <pre><code id="code-booleans">let isLoggedIn = true;
+console.log(isLoggedIn);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-booleans">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This saves the value <strong>true</strong> in a variable and prints
+                                it. Booleans are often used in conditions.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>true</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="logic" data-search="if else conditions logic">
+                        <h3>if / else</h3>
+                        <p>if / else lets your code make decisions.</p>
+                        <pre><code id="code-ifelse">let score = 62;
+
+if (score &gt;= 50) {
+    console.log("Pass");
+} else {
+    console.log("Try again");
+}</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-ifelse">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This checks whether <strong>score</strong> is greater than or equal
+                                to <strong>50</strong>. Since the score is <strong>62</strong>, the first block runs.
+                            </p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Pass</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="logic"
+                        data-search="comparison operators logic greater less equal">
+                        <h3>Comparison Operators</h3>
+                        <p>Comparison operators compare values and return true or false.</p>
+                        <pre><code id="code-comparison">console.log(10 &gt; 5);
+console.log(4 === 4);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-comparison">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">The first line checks whether <strong>10</strong> is greater than
+                                <strong>5</strong>. The second line checks whether <strong>4</strong> is exactly equal
+                                to <strong>4</strong>.
+                            </p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>true
+true</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="loops" data-search="for loop loops repeat">
+                        <h3>for Loop</h3>
+                        <p>A for loop repeats code a set number of times.</p>
+                        <pre><code id="code-forloop">for (let i = 0; i &lt; 5; i++) {
+    console.log(i);
+}</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-forloop">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This starts at <strong>0</strong> and keeps running until the value
+                                is no longer less than <strong>5</strong>. The value of <strong>i</strong> changes on
+                                each loop.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>0
+1
+2
+3
+4</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="loops" data-search="while loop loops condition">
+                        <h3>while Loop</h3>
+                        <p>A while loop keeps running while a condition stays true.</p>
+                        <pre><code id="code-whileloop">let count = 3;
+
+while (count &gt; 0) {
+    console.log(count);
+    count--;
+}</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-whileloop">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This keeps printing the value of <strong>count</strong> while it is
+                                greater than <strong>0</strong>. After each loop, the value goes down by
+                                <strong>1</strong>.
+                            </p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>3
+2
+1</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="functions" data-search="functions reusable code">
+                        <h3>Functions</h3>
+                        <p>A function is a reusable block of code.</p>
+                        <pre><code id="code-functions">function greet() {
+    console.log("Hello");
+}
+
+greet();</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-functions">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This creates a function named <strong>greet</strong>. The function
+                                does nothing until it is called. When <strong>greet()</strong> runs, it prints a
+                                message.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Hello</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="functions"
+                        data-search="parameters arguments functions">
+                        <h3>Parameters</h3>
+                        <p>Parameters let a function accept input values.</p>
+                        <pre><code id="code-parameters">function greetUser(name) {
+    console.log("Hello " + name);
+}
+
+greetUser("Nonso");</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-parameters">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This function accepts one input called <strong>name</strong>. When
+                                the function runs, it joins <strong>"Hello "</strong> with the value passed in.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Hello Nonso</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="functions" data-search="return functions output">
+                        <h3>Return</h3>
+                        <p>return sends a value back from a function.</p>
+                        <pre><code id="code-return">function add(a, b) {
+    return a + b;
+}
+
+console.log(add(2, 3));</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-return">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This function adds two values and sends the answer back. The returned
+                                value is then printed to the console.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>5</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="dom" data-search="arrays list multiple values data">
+                        <h3>Arrays</h3>
+                        <p>An array stores multiple values in one variable.</p>
+                        <pre><code id="code-arrays">let colors = ["red", "blue", "green"];
+console.log(colors[1]);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-arrays">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This creates an array with three values. Arrays use index numbers,
+                                and index <strong>1</strong> points to the second item.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>blue</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="dom" data-search="objects key value data">
+                        <h3>Objects</h3>
+                        <p>An object stores related data using keys and values.</p>
+                        <pre><code id="code-objects">let car = {
+    make: "Honda",
+    year: 2020
+};
+
+console.log(car.make);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-objects">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This creates an object called <strong>car</strong> with two
+                                properties. The last line prints the value stored in the <strong>make</strong> property.
+                            </p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Honda</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="dom" data-search="getelementbyid dom select element">
+                        <h3>getElementById</h3>
+                        <p>This method selects one element by its id.</p>
+                        <pre><code id="code-getelementbyid">const heading = document.getElementById("title");
+heading.textContent = "New title";</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-getelementbyid">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This finds the element with the id <strong>title</strong> and changes
+                                the text inside it.</p>
+                            <p class="detail-label">Result on page</p>
+                            <pre class="detail-output"><code>The selected element now shows:
+New title</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="dom"
+                        data-search="textcontent innerhtml dom update page">
+                        <h3>textContent and innerHTML</h3>
+                        <p>These are two common ways to update content on the page.</p>
+                        <pre><code id="code-textcontent">element.textContent = "New text";
+element.innerHTML = "&lt;strong&gt;Bold text&lt;/strong&gt;";</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-textcontent">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text"><strong>textContent</strong> adds plain text only.
+                                <strong>innerHTML</strong> can add HTML tags and structure too.
+                            </p>
+                            <p class="detail-label">Result on page</p>
+                            <pre class="detail-output"><code>textContent → New text
+innerHTML → Bold text (shown in bold)</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="dom"
+                        data-search="createelement appendchild dom add element">
+                        <h3>createElement and appendChild</h3>
+                        <p>These methods let you create and add new elements with JavaScript.</p>
+                        <pre><code id="code-createelement">const item = document.createElement("li");
+item.textContent = "New item";
+list.appendChild(item);</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-createelement">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This creates a new list item, gives it text, and adds it to an
+                                existing list on the page.</p>
+                            <p class="detail-label">Result on page</p>
+                            <pre class="detail-output"><code>A new &lt;li&gt; appears inside the list:
+New item</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="events" data-search="click event listener events">
+                        <h3>Click Events</h3>
+                        <p>A click event runs code when the user clicks something.</p>
+                        <pre><code id="code-click">button.addEventListener("click", function () {
+    console.log("Button clicked");
+});</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-click">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This waits for the user to click a button. When the click happens,
+                                the function runs and logs a message.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Button clicked</code></pre>
+                        </div>
+                    </article>
+
+                    <article class="card js-card" data-category="events" data-search="input submit events forms">
+                        <h3>Input and Submit Events</h3>
+                        <p>These events help you work with forms and typed input.</p>
+                        <pre><code id="code-inputsubmit">form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    console.log("Form handled with JavaScript");
+});</code></pre>
+                        <div class="card-actions">
+                            <button class="btn btn-secondary small-btn toggle-example-btn" type="button">Show
+                                Details</button>
+                            <button class="btn btn-secondary small-btn copy-code-btn" type="button"
+                                data-code-id="code-inputsubmit">Copy Code</button>
+                        </div>
+                        <div class="detail-box hidden">
+                            <p class="detail-label">What this does</p>
+                            <p class="detail-text">This listens for a form submission, stops the page from refreshing,
+                                and lets JavaScript handle the form instead.</p>
+                            <p class="detail-label">Result</p>
+                            <pre class="detail-output"><code>Form handled with JavaScript</code></pre>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 NONSO. Designed and built by Chinonso Unegbu.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

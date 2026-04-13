@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Three</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="game-wrapper">
+    <header>
+      <h1>Connect Three</h1>
+      <p class="subtitle">
+        Player 1 uses <strong>X</strong> and Player 2 uses <strong>O</strong>.
+        Click any column to drop a disc.
+      </p>
+    </header>
+
+    <section class="game-info">
+      <button id="restartBtn">Restart Game</button>
+      <p id="status">Player 1's turn (X)</p>
+    </section>
+
+    <!-- 
+      The board is written directly in HTML so the 3 x 6 layout is easy to see and grade.
+      Each cell stores its row and column in data attributes.
+    -->
+    <section id="board" class="board" aria-label="Connect Three game board">
+      <!-- Row 1 -->
+      <div class="cell" data-row="0" data-col="0"><div class="disc empty"></div></div>
+      <div class="cell" data-row="0" data-col="1"><div class="disc empty"></div></div>
+      <div class="cell" data-row="0" data-col="2"><div class="disc empty"></div></div>
+
+      <!-- Row 2 -->
+      <div class="cell" data-row="1" data-col="0"><div class="disc empty"></div></div>
+      <div class="cell" data-row="1" data-col="1"><div class="disc empty"></div></div>
+      <div class="cell" data-row="1" data-col="2"><div class="disc empty"></div></div>
+
+      <!-- Row 3 -->
+      <div class="cell" data-row="2" data-col="0"><div class="disc empty"></div></div>
+      <div class="cell" data-row="2" data-col="1"><div class="disc empty"></div></div>
+      <div class="cell" data-row="2" data-col="2"><div class="disc empty"></div></div>
+
+      <!-- Row 4 -->
+      <div class="cell" data-row="3" data-col="0"><div class="disc empty"></div></div>
+      <div class="cell" data-row="3" data-col="1"><div class="disc empty"></div></div>
+      <div class="cell" data-row="3" data-col="2"><div class="disc empty"></div></div>
+
+      <!-- Row 5 -->
+      <div class="cell" data-row="4" data-col="0"><div class="disc empty"></div></div>
+      <div class="cell" data-row="4" data-col="1"><div class="disc empty"></div></div>
+      <div class="cell" data-row="4" data-col="2"><div class="disc empty"></div></div>
+
+      <!-- Row 6 -->
+      <div class="cell" data-row="5" data-col="0"><div class="disc empty"></div></div>
+      <div class="cell" data-row="5" data-col="1"><div class="disc empty"></div></div>
+      <div class="cell" data-row="5" data-col="2"><div class="disc empty"></div></div>
+    </section>
+
+    <p class="hint">
+      Goal: connect 3 of your discs horizontally, vertically, or diagonally.
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

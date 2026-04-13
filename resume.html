@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | NONSO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Shared site header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand">NONSO</a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html" class="active">Resume</a></li>
+                    <li><a href="javascript.html">JavaScript</a></li>
+                    <li><a href="basketball.html">Basketball</a></li>
+                </ul>
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle" type="button">Light Mode</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Profile summary -->
+        <section class="section">
+            <div class="container">
+                <div class="content-block page-intro">
+                    <p class="eyebrow">Profile</p>
+                    <h1 class="section-title">Chinonso Vincent Unegbu</h1>
+                    <p class="resume-role">Software Developer</p>
+                    <p class="section-text">
+                        I am a developer with experience supporting internal IT systems in a structured legal
+                        environment. My background includes troubleshooting, system configuration, account
+                        management, and maintaining secure digital records. I am currently building stronger
+                        skills in programming and web development while creating useful projects in HTML,
+                        CSS, JavaScript, and C++.
+                    </p>
+
+                    <!-- Quick links help visitors reach the lower sections faster. -->
+                    <div class="jump-links">
+                        <a href="#projects-section" class="jump-link jump-link-primary">View Projects</a>
+                        <a href="#experience-section" class="jump-link">Jump to Experience</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education and contact stay side by side because both are compact. -->
+        <section class="section">
+            <div class="container grid grid-2 resume-grid">
+                <div class="content-block">
+                    <p class="eyebrow">Education</p>
+
+                    <div class="timeline-item">
+                        <h3>Bow Valley College</h3>
+                        <p class="meta">Calgary, Canada · Jan 2026 – Present</p>
+                        <p>Diploma in Software Development</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Stars International School</h3>
+                        <p class="meta">Benin City, Nigeria · 2018</p>
+                        <p>WAEC High School Certificate</p>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <p class="eyebrow">Contact</p>
+                    <ul class="contact-list">
+                        <li>
+                            <span>Email</span>
+                            <a href="mailto:unegbuvincent@gmail.com">unegbuvincent@gmail.com</a>
+                        </li>
+                        <li>
+                            <span>LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/chinonso-unegbu" target="_blank" rel="noopener noreferrer">
+                                linkedin.com/in/chinonso-unegbu
+                            </a>
+                        </li>
+                        <li>
+                            <span>GitHub</span>
+                            <a href="https://github.com/VIN-IX" target="_blank" rel="noopener noreferrer">
+                                github.com/VIN-IX
+                            </a>
+                        </li>
+                        <li>
+                            <span>Location</span>
+                            <p>Calgary, Canada</p>
+                        </li>
+                    </ul>
+
+                    <button id="copyEmailButton" class="btn btn-secondary copy-btn" type="button">Copy Email</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills sit in their own row so the section stays clean even if experience grows. -->
+        <section class="section">
+            <div class="container">
+                <div class="content-block">
+                    <p class="eyebrow">Technical Skills</p>
+                    <div class="chip-row skill-cloud">
+                        <span class="chip">HTML</span>
+                        <span class="chip">CSS</span>
+                        <span class="chip">JavaScript</span>
+                        <span class="chip">C++</span>
+                        <span class="chip">IT Troubleshooting</span>
+                        <span class="chip">User Account Management</span>
+                        <span class="chip">System Configuration</span>
+                        <span class="chip">Basic UI/UX Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="experience-section">
+            <div class="container">
+                <div class="content-block">
+                    <p class="eyebrow">Experience &amp; Involvement</p>
+
+                    <div class="timeline-item">
+                        <h3>IT &amp; Administrative Assistant</h3>
+                        <p class="meta">Benin City, Nigeria · 2018 – 2024</p>
+                        <ul class="list">
+                            <li>Managed user accounts, access permissions, and secure digital records in a legal office.</li>
+                            <li>Helped resolve hardware, software, and network issues as they came up.</li>
+                            <li>Supported daily operations through system updates, software management, and documentation work.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3>Volunteer</h3>
+                        <p class="meta">Students’ Association of Bow Valley College (SABVC) · Winter 2026</p>
+                        <ul class="list">
+                            <li>Helped support student-facing events through setup, coordination, and general event assistance.</li>
+                            <li>Assisted with engagement during activities and helped things run smoothly on site.</li>
+                            <li>Contributed to a welcoming experience for students by supporting organized campus events.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project cards link directly to the project folders inside the main site. -->
+        <section class="section" id="projects-section">
+            <div class="container">
+                <div class="content-block">
+                    <p class="eyebrow">Selected Projects</p>
+                    <h2 class="section-title">Course Projects</h2>
+                    <p class="section-text">
+                        A few recent projects that reflect my current learning in web development,
+                        interaction design, and JavaScript.
+                    </p>
+
+                    <div class="grid grid-3 project-grid">
+                        <a href="projects/cashier/index.html" class="card project-card project-link-card project-cashier" target="_blank" rel="noopener noreferrer">
+                            <div class="project-top">
+                                <h3>Cashier Calculator Website</h3>
+                                <span class="project-arrow">↗</span>
+                            </div>
+
+                            <p>
+                                A browser-based cashier interface for adding products, setting prices,
+                                building a cart, and generating a receipt in real time.
+                            </p>
+
+                            <div class="chip-row project-tags">
+                                <span class="chip">HTML</span>
+                                <span class="chip">CSS</span>
+                                <span class="chip">JavaScript</span>
+                            </div>
+
+                            <span class="feature-link">View Project →</span>
+                        </a>
+
+                        <a href="projects/connect-three/index.html" class="card project-card project-link-card project-connect" target="_blank" rel="noopener noreferrer">
+                            <div class="project-top">
+                                <h3>Connect Three</h3>
+                                <span class="project-arrow">↗</span>
+                            </div>
+
+                            <p>
+                                A two-player browser game where players drop discs into a 3-column board,
+                                with turn tracking, win detection, and restart controls.
+                            </p>
+
+                            <div class="chip-row project-tags">
+                                <span class="chip">HTML</span>
+                                <span class="chip">CSS</span>
+                                <span class="chip">JavaScript</span>
+                            </div>
+
+                            <span class="feature-link">View Project →</span>
+                        </a>
+
+                        <a href="projects/athlete/index.html" class="card project-card project-link-card project-athlete" target="_blank" rel="noopener noreferrer">
+                            <div class="project-top">
+                                <h3>Athlete Profile Website</h3>
+                                <span class="project-arrow">↗</span>
+                            </div>
+
+                            <p>
+                                A responsive athlete profile page that presents biography, achievements,
+                                and key statistics through structured content, modern styling, and light interaction.
+                            </p>
+
+                            <div class="chip-row project-tags">
+                                <span class="chip">HTML</span>
+                                <span class="chip">CSS</span>
+                                <span class="chip">JavaScript</span>
+                            </div>
+
+                            <span class="feature-link">View Project →</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 NONSO. Designed and built by Chinonso Unegbu.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
